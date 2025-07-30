@@ -1,0 +1,88 @@
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .nav-center {
+      justify-content: center;
+    }
+    .nav-link {
+      position: relative;
+    }
+    .navbar {
+        background: linear-gradient(to top, #072f88, #4681f4);
+      }
+
+      .navbar {
+        background: linear-gradient(to top,#4681f4, #072f88, );
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      .navbar {
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
+        min-height: 50px;
+      }
+      
+      .navbar .form-control,
+      .navbar .nav-link,
+      .navbar .bi {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .navbar-brand img {
+        margin-top: -30px;
+        margin-bottom: -30px;
+      }
+      
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 3px;
+      background-color: orange;
+      left: 50%;
+      bottom: 0;
+      transition: all 0.3s ease-in-out;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+      left: 0;
+    }    
+    
+    .nav-link:hover {
+      border-radius: 4px;
+    }
+    .carousel-item img {
+      height: 400px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .product-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+    }
+    .product-title {
+      font-size: 0.9rem;
+      min-height: 3em;
+    }
+    .product-card {
+        border: none !important;
+        box-shadow: none !important;
+      }
+    .section-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 2rem;
+    }
+    nav.navbar {
+      position: relative;
+      z-index: 1000;
+    }
+    .search-input {
+      width: 100%;
+      max-width: 600px;
+    }
+    .clickable {
+      cursor: pointer;
+    }

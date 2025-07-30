@@ -1,0 +1,80 @@
+.site-footer {
+    background-color: white;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  .brand-section {
+    background: linear-gradient(to bottom, #f1f1f1, white);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+  
+  .brand-button {
+    background-color: #1b3151;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .brand-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .brand-logos img {
+    max-height: 300px;
+    object-fit: contain;
+  }
+  
+  .footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .footer-col {
+    flex: 1 1 200px;
+  }
+  
+  .footer-col h5 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-col ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-col a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .footer-col p {
+    margin: 0.3rem 0;
+    font-size: 14px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 14px;
+    border-top: 1px solid ;
+    padding-top: 1rem;
+  }
+  

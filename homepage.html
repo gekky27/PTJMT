@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT. Jaya Multi Teknologi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <link rel="stylesheet" href="homepage.css" />
+  <link rel="stylesheet" href="footer.css" />
+</head>
+<body>
+
+<!-- Navbar with stacked layout -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary px-3 flex-column align-items-start">
+  <div class="d-flex w-100 align-items-center justify-content-between" style="height: 70px;">
+    <a class="navbar-brand clickable" href="#" onclick="alert('Redirect to homepage')">
+      <img src="images/JMTLOGO.png" style="width: 200px; height: 200px;" alt="Logo">
+
+    </a>
+    <form class="d-flex w-50 mx-auto" style="max-height: 50px;">
+      <input class="form-control me-2" type="search" placeholder="Search in JMT" aria-label="Search">
+    </form>
+    <div class="d-flex align-items-center">
+      <a href="#" onclick="alert('Go to Cart')" class="me-3 clickable">
+        <img src="images/shopping.png" alt="Cart" style="width: 32px; height: 32px;">
+      </a>
+      <a href="#" onclick="alert('Go to Profile')" class="clickable">
+        <img src="images/person.png" alt="Profile" style="width: 32px; height: 32px;">
+      </a>
+    </div>
+    
+  </div>
+  <div class="collapse navbar-collapse w-100"style=" height: 50px;">
+    <ul class="navbar-nav nav-center w-100 text-center flex-wrap mt-2">
+      <li class="nav-item" id="allProductsNav"><a class="nav-link" href="#">All Products</a></li>
+      <li class="nav-item" id="maintenanceNav"><a class="nav-link" href="#">Maintenance</a></li>
+      <li class="nav-item" id="accessoriesNav"><a class="nav-link" href="#">Accessories</a></li>
+      <li class="nav-item" id="networkingNav"><a class="nav-link" href="#">Networking</a></li>
+      <li class="nav-item" id="softwareNav"><a class="nav-link" href="#">Software</a></li>
+      <li class="nav-item" id="softwareNav"><a class="nav-link" href="#">Deals</a></li>
+
+    </ul>
+  </div>
+</nav>
+
+<div id="allProductsPopup" class="container-fluid bg-light py-4 shadow" style="display: none; position: absolute; top: 120px; left: 0; width: 100%; z-index: 999;">
+  <div class="text-left mb-4">
+    <p style="font-size: 24px; font-weight: bold;" class="m-0">All Products</p>
+  </div>
+  <div class="d-flex justify-content-around flex-wrap text-center">
+    
+    <a href="products/keyboard.html" class="text-decoration-none text-dark">
+      <div>
+        <img src="images/keyboard.png" alt="Keyboards" style="height: 100px;" />
+        <p class="fw-bold mt-2">Keyboards</p>
+      </div>
+    </a>
+
+    <a href="products/mice.html" class="text-decoration-none text-dark">
+      <div>
+        <img src="images/mice.png" alt="Mice" style="height: 100px; transform: rotate(-90deg);" />
+        <p class="fw-bold mt-2">Mice</p>
+      </div>
+    </a>    
+
+    <a href="products/speaker.html" class="text-decoration-none text-dark">
+      <div>
+        <img src="images/speaker.png" alt="Speaker" style="height: 100px;" />
+        <p class="fw-bold mt-2">Speaker</p>
+      </div>
+    </a>
+
+    <a href="products/headset.html" class="text-decoration-none text-dark">
+      <div>
+        <img src="images/headset.png" alt="Headset" style="height: 100px;" />
+        <p class="fw-bold mt-2">Headset</p>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<!-- Maintenance Popup -->
+<div id="maintenancePopup" class="container-fluid py-4 px-5" style="display: none; background-color: #f8f4f3; position: absolute; top: 120px; left: 0; width: 100%; z-index: 999;">
+  <div class="d-flex justify-content-start align-items-start gap-5">
+    
+    <!-- Left Section: Title + Buttons -->
+    <div>
+      <h3 class="fw-bold mb-4">Maintenance</h3>
+      <div class="d-flex flex-column">
+        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Fire Alarm Maintenance</button>
+        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Smoke Detector Maintenance</button>
+        
+      </div>
+    </div>
+
+    <!-- Right Section: Images -->
+    <div class="d-flex gap-4">
+      <img src="images/maintain1.jpg" alt="Maintenance 1" style="width: 200px; height: 130px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="images/maintenance2.png" alt="Maintenance 2" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="images/maintenance3.png" alt="accessories 3" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- Accessories Popup -->
+<div id="accessoriesPopup" class="container-fluid py-4 px-5" style="display: none; background-color: #f8f4f3; position: absolute; top: 120px; left: 0; width: 100%; z-index: 999;">
+  <div class="d-flex justify-content-start align-items-start gap-5">
+    
+    <!-- Left Section: Title + Buttons -->
+    <div>
+      <h3 class="fw-bold mb-4">Accessories</h3>
+      <div class="d-flex flex-column">
+        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Keycaps</button>
+        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Cables</button>
+        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Switches</button>
+        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Case</button>
+        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Hard Disk</button>
+        <button class="btn btn-secondary rounded-pill px-4 py-2 fw-bold" style="width: 270px;">Others</button>
+      </div>
+    </div>
+
+    <!-- Right Section: Images -->
+    <div class="d-flex gap-4">
+      <img src="images/maintain1.jpg" alt="accessories 1" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="images/maintenance2.png" alt="accessories 2" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="images/maintenance3.png" alt="accessories 3" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- Networking Popup -->
+<div id="networkingPopup" class="container-fluid py-4 px-5" style="display: none; background-color: #f8f4f3; position: absolute; top: 120px; left: 0; width: 100%; z-index: 999;">
+  <div class="d-flex justify-content-between align-items-start">
+    
+    <!-- Left Section: Title + Buttons (Stacked Vertically) -->
+    <div>
+      <h3 class="fw-bold mb-4">Networking</h3>
+      <div class="d-flex flex-column">
+        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Router</button>
+        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Modems</button>
+        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Camera</button>
+        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Antenna</button>
+        <button class="btn btn-secondary rounded-pill px-4 py-2 fw-bold" style="width: 270px;">Others</button>
+      </div>
+    </div>
+
+    <!-- Right Section: Images -->
+    <div class="d-flex gap-4">
+      <img src="images/maintenance1.png" alt="accessories 1" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="images/maintenance2.png" alt="accessories 2" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="images/maintenance3.png" alt="accessories 3" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+    </div>
+
+  </div>
+</div>
+
+<!-- Software Popup -->
+<div id="softwarePopup" class="container-fluid py-4 px-5" style="display: none; background-color: #f8f4f3; position: absolute; top: 120px; left: 0; width: 100%; z-index: 999;">
+  <div class="d-flex justify-content-between align-items-start">
+    
+    <!-- Left Section: Title + Buttons (Stacked Vertically) -->
+    <div>
+      <h3 class="fw-bold mb-4">Software</h3>
+      <div class="d-flex flex-column">
+        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Operating System</button>
+        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Anti Virus Software</button>
+        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Office Software</button>
+      </div>
+    </div>
+
+    <!-- Right Section: Images -->
+    <div class="d-flex gap-4">
+      <img src="images/maintenance1.png" alt="accessories 1" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="images/maintenance2.png" alt="accessories 2" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="images/maintenance3.png" alt="accessories 3" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!-- Carousel Banner -->
+<div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/carousel4.webp" class="d-block w-100" alt="Banner 1" />
+    </div>
+    <div class="carousel-item">
+      <img src="images/carousel2.webp" class="d-block w-100" alt="Banner 2" />
+    </div>
+    <div class="carousel-item">
+      <img src="images/carousel3.webp" class="d-block w-100" alt="Banner 3" />
+    </div>
+    <div class="carousel-item">
+      <img src="images/carousel1.webp" class="d-block w-100" alt="Banner 4" />
+    </div>
+  </div>
+
+  <!-- Carousel controls (optional but recommended) -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<!-- Product Sections -->
+<div class="container mt-5">
+  <h5 class="section-title">Hot Deals</h5>
+  <div class="row row-cols-2 row-cols-md-6 g-4" id="hotDeals">
+    <!-- Product Cards inserted by JS -->
+  </div>
+
+  <h5 class="section-title">Featured Products</h5>
+  <div class="row row-cols-2 row-cols-md-6 g-4" id="featuredProducts">
+    <!-- Product Cards inserted by JS -->
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="brand-section">
+    <button class="brand-button">Shop By Brand</button>
+    <div class="brand-logos">
+      <img src="images/brand.png" alt="Brand 1" />
+      <!-- Add all other logos here -->
+    </div>
+  </div>
+
+  <div class="footer-columns">
+    <div class="footer-col">
+      <h5>Tentang Kami</h5>
+      <ul>
+        <li><a href="#">Tentang Kami</a></li>
+        <li><a href="#">Kebijakan Privasi</a></li>
+        <li><a href="#">Syarat & Ketentuan</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Bantuan</h5>
+      <ul>
+        <li><a href="#">Cara Berbelanja</a></li>
+        <li><a href="#">Cara Pembayaran</a></li>
+        <li><a href="#">Status Pesanan</a></li>
+        <li><a href="#">Hubungi Kami</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Customer Care</h5>
+      <p>Klaim, dan Garansi Produk , silahkan hubungi:</p>
+      <p><i class="bi bi-geo-alt-fill"></i> Jalan Ahmad Yani Gang Merpati III Blok A No.1 Denpasar, Bali</p>
+      <p><i class="bi bi-calendar"></i> Buka Senin–Sabtu, 10.00–18.00 WITA</p>
+      <p><i class="bi bi-whatsapp"></i> 087763854747 (Message Only)</p>
+      <p><i class="bi bi-envelope-fill"></i> jayamultiteknologi@gmail.com</p>
+    </div>
+    <div class="footer-col">
+      <h5>Toko Kami</h5>
+      <p><i class="bi bi-geo-alt-fill"></i> Jalan Ahmad Yani Gang Merpati III Blok A No.1 Denpasar, Bali</p>
+      <p><i class="bi bi-calendar"></i> Buka Senin–Sabtu, 10.00–18.00 WITA</p>
+      <p><i class="bi bi-whatsapp"></i> 087763854747 (Message Only)</p>
+      <p><i class="bi bi-telephone"></i> (0361) 4714886</p>
+      <p><i class="bi bi-envelope-fill"></i> jayamultiteknologi@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2009 - 2025, <strong>PT JAYA MULTI TEKNOLOGI</strong>. All Right Reserved</p>
+  </div>
+</footer>
+
+
+<script>
+  const hotDealsData = [
+    { title: "Keychron K2 HE Wireless Magnetic Switch Custom Keyboard", price: "$139.99", sku: "K2H-F1", img: "images/keyboard.png" },
+  ];
+  const featuredData = [
+    { title: "Keychron Daruma Doll Metal Artisan Keycap", price: "$13.99", sku: "A7-34", img: "images/keycaps.png" },
+  ];
+
+  function createCard(data) {
+    return `
+      <div class="col">
+        <div class="card product-card clickable" onclick="alert('Clicked: ${data.title}')">
+          <img src="${data.img}" class="card-img-top" alt="${data.title}" />
+          <div class="card-body p-2">
+            <h6 class="product-title">${data.title}</h6>
+            <p class="text-muted mb-1">SKU: ${data.sku}</p>
+            <p class="mb-0"><strong>${data.price}</strong></p>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+  
+
+  function populateProducts() {
+    const hotDealsContainer = document.getElementById('hotDeals');
+    const featuredContainer = document.getElementById('featuredProducts');
+
+    hotDealsContainer.innerHTML = hotDealsData.map(p => createCard(p)).join('').repeat(6);
+    featuredContainer.innerHTML = featuredData.map(p => createCard(p)).join('').repeat(6);
+  }
+
+  function handleSearch() {
+    const input = document.getElementById('searchBar').value.toLowerCase();
+    alert('Search for: ' + input);
+  }
+
+  window.onload = populateProducts;
+
+  const navPopups = [
+  { navId: 'allProductsNav', popupId: 'allProductsPopup' },
+  { navId: 'maintenanceNav', popupId: 'maintenancePopup' },
+  { navId: 'accessoriesNav', popupId: 'accessoriesPopup' },
+  { navId: 'networkingNav', popupId: 'networkingPopup' },
+  { navId: 'softwareNav', popupId: 'softwarePopup' }
+];
+
+navPopups.forEach(({ navId, popupId }) => {
+  const navItem = document.getElementById(navId);
+  const popup = document.getElementById(popupId);
+  let timeout;
+
+  if (navItem && popup) {
+    navItem.addEventListener('mouseenter', () => {
+      clearTimeout(timeout);
+      hideAllPopups();
+      popup.style.display = 'block';
+    });
+
+    navItem.addEventListener('mouseleave', () => {
+      timeout = setTimeout(() => popup.style.display = 'none', 300);
+    });
+
+    popup.addEventListener('mouseenter', () => clearTimeout(timeout));
+    popup.addEventListener('mouseleave', () => {
+      timeout = setTimeout(() => popup.style.display = 'none', 300);
+    });
+  }
+});
+
+function hideAllPopups() {
+  document.querySelectorAll('[id$="Popup"]').forEach(p => p.style.display = 'none');
+}
+</script>
+</body>
+</html>
