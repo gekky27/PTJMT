@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="images/JMT.jpg" alt="Logo">
+        <h2>Jaya Multi Teknologi</h2>
+      </div>
+      <div class="admin-info">
+        <div class="avatar">A</div>
+        <p>Hello,<br><strong>Admin</strong></p>
+      </div>
+      <div class="menu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="orders.html">Orders</a>
+        <a href="admin.html" class="active">Products</a>
+        <a href="#" onclick="openLogout()">Log out</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h2>Informasi Produk</h2>
+      <form class="product-form">
+
+        <!-- Upload Foto -->
+        <div class="form-group">
+          <label>Foto Produk</label>
+          <div class="upload-box">
+            <span>🖼️</span>
+            <p>Tambahkan Foto (0/9)</p>
+          </div>
+        </div>
+
+        <!-- Upload Video -->
+        <div class="form-group">
+          <label>Video Produk</label>
+          <div class="upload-box">
+            <span>🎥</span>
+            <p>Tambahkan Video</p>
+          </div>
+        </div>
+
+        <!-- Nama Produk -->
+        <div class="form-group">
+          <label>Nama Produk</label>
+          <input type="text" maxlength="300" placeholder="Masukkan nama produk">
+          <small>0 / 300</small>
+        </div>
+
+        <!-- Kategori Produk -->
+        <div class="form-group">
+          <label>Kategori Produk</label>
+          <input type="text" placeholder="Masukkan kategori produk">
+        </div>
+
+        <!-- Deskripsi Produk -->
+        <div class="form-group">
+          <label>Deskripsi Produk</label>
+          <textarea maxlength="1000" rows="5" placeholder="Masukkan deskripsi produk"></textarea>
+          <small>0 / 1000</small>
+        </div>
+
+        <h2>Spesifikasi Produk</h2>
+
+        <!-- Merek -->
+        <div class="form-group">
+          <label>Merek</label>
+          <input type="text" placeholder="Masukkan merek">
+        </div>
+
+        <!-- Tipe -->
+        <div class="form-group">
+          <label>Tipe</label>
+          <input type="text" placeholder="Masukkan tipe produk">
+        </div>
+
+        <main class="main-content">
+            <h2>Informasi Produk</h2>
+            <form class="product-form">
+          
+              <!-- Upload Foto -->
+              <div class="form-group">
+                <label>Foto Produk</label>
+                <div class="upload-box">
+                  <span>🖼️</span>
+                  <p>Tambahkan Foto (0/9)</p>
+                </div>
+              </div>
+          
+              <!-- Upload Video -->
+              <div class="form-group">
+                <label>Video Produk</label>
+                <div class="upload-box">
+                  <span>🎥</span>
+                  <p>Tambahkan Video</p>
+                </div>
+              </div>
+          
+              <!-- Nama Produk -->
+              <div class="form-group">
+                <label>Nama Produk</label>
+                <input type="text" maxlength="300" placeholder="Masukkan nama produk">
+                <small>0 / 300</small>
+              </div>
+          
+              <!-- Kategori Produk -->
+              <div class="form-group">
+                <label>Kategori Produk</label>
+                <input type="text" placeholder="Masukkan kategori produk">
+              </div>
+          
+              <!-- Deskripsi Produk -->
+              <div class="form-group">
+                <label>Deskripsi Produk</label>
+                <textarea maxlength="1000" rows="5" placeholder="Masukkan deskripsi produk"></textarea>
+                <small>0 / 1000</small>
+              </div>
+          
+              <!-- Spesifikasi Produk -->
+              <h2>Spesifikasi Produk</h2>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Merek</label>
+                  <select>
+                    <option>Pilih Merek</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Bahan</label>
+                  <select>
+                    <option>Pilih Bahan</option>
+                  </select>
+                </div>
+              </div>
+          
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Tipe</label>
+                  <select>
+                    <option>Pilih Tipe</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Produk Custom</label>
+                  <select>
+                    <option>Pilih</option>
+                  </select>
+                </div>
+              </div>
+          
+              <!-- Informasi Penjualan -->
+              <h2>Informasi Penjualan</h2>
+          
+              <div class="form-group">
+                <label>Variasi</label>
+                <div class="variation-section">
+                  <button type="button" class="btn-variation">➕ Tambah Variasi</button>
+                  <div class="variation-inputs">
+                    <input type="text" placeholder="Variasi 1 (0/20)">
+                    <input type="text" placeholder="Opsi (0/20)">
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Daftar Variasi -->
+              <div class="variation-table">
+                <div class="variation-header">
+                  <span>Rp Harga</span>
+                  <span>Stok</span>
+                  <span>Kode Variasi</span>
+                </div>
+                <div class="variation-row">
+                  <span>🖼️ Warna</span>
+                  <span>Harga</span>
+                  <span>Stock</span>
+                  <span>Kode Variasi</span>
+                  <span>Berat</span>
+                  <span>Ukuran Paket</span>
+                </div>
+              </div>
+          
+              <!-- Min Pembelian -->
+              <div class="form-group">
+                <label>Min. Jumlah Pembelian</label>
+                <select>
+                  <option>1</option>
+                  <option>5</option>
+                  <option>10</option>
+                </select>
+              </div>
+              <!-- Save Button -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-save">💾 Save Product</button>
+                </div>
+          
+            </form>
+          </main>
+          
+      </form>
+    </main>
+  </div>
+  
+  <!-- 🔹 Logout Popup Overlay -->
+  <div class="overlay" id="logoutOverlay">
+    <div class="popup">
+      <button class="close-btn" onclick="closeLogout()">Close</button>
+      <p>Are you sure you want<br>to Log out?</p>
+      <div class="popup-actions">
+        <button class="btn yes" onclick="window.location.href='login.html'">Yes</button>
+        <button class="btn no" onclick="closeLogout()">No</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 Small JS -->
+  <script>
+    function openLogout() {
+      document.getElementById("logoutOverlay").style.display = "flex";
+    }
+    function closeLogout() {
+      document.getElementById("logoutOverlay").style.display = "none";
+    }
+  </script>
+</body>
+</html>

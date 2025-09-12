@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="images/JMT.jpg" alt="Logo">
+        <h2>Jaya Multi Teknologi</h2>
+      </div>
+
+      <div class="admin-info">
+        <div class="avatar">A</div>
+        <p>Hello,<br><strong>Admin</strong></p>
+      </div>
+
+      <nav class="menu">
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="order.html">Orders</a>
+        <a href="admin.html">Products</a>
+        <a href="#" onclick="openLogout()">Log out</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h2>Top Viewed Product</h2>
+      <div class="products-grid">
+        <!-- Product Card -->
+        <div class="product-card">
+          <img src="images/keycaps.png" alt="Product">
+          <h3>Keychron Daruma Doll Metal Artisan Keycap</h3>
+          <p>1.000 pcs</p>
+        </div>
+        <div class="product-card">
+          <img src="images/keycaps.png" alt="Product">
+          <h3>Keychron Daruma Doll Metal Artisan Keycap</h3>
+          <p>1.000 pcs</p>
+        </div>
+        <div class="product-card">
+          <img src="images/keycaps.png" alt="Product">
+          <h3>Keychron Daruma Doll Metal Artisan Keycap</h3>
+          <p>1.000 pcs</p>
+        </div>
+        <!-- duplicate as many as needed -->
+      </div>
+    </main>
+  </div>
+  
+  <!-- 🔹 Logout Popup Overlay -->
+  <div class="overlay" id="logoutOverlay">
+    <div class="popup">
+      <button class="close-btn" onclick="closeLogout()">Close</button>
+      <p>Are you sure you want<br>to Log out?</p>
+      <div class="popup-actions">
+        <button class="btn yes" onclick="window.location.href='login.html'">Yes</button>
+        <button class="btn no" onclick="closeLogout()">No</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 Small JS -->
+  <script>
+    function openLogout() {
+      document.getElementById("logoutOverlay").style.display = "flex";
+    }
+    function closeLogout() {
+      document.getElementById("logoutOverlay").style.display = "none";
+    }
+  </script>
+</body>
+</html>
