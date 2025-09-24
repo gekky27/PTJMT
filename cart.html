@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Deals Page</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="homepage.css"> <!-- Custom CSS -->
-  <link rel="stylesheet" href="footer.css"> <!-- Custom CSS -->
-  <link rel="stylesheet" href="deals.css"> <!-- Custom CSS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT. Jaya Multi Teknologi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <link rel="stylesheet" href="homepage.css" />
+  <link rel="stylesheet" href="footer.css" />
+  <link rel="stylesheet" href="cart.css" />
 
 </head>
 <body>
@@ -55,11 +58,12 @@
       <button id="customerBtn" onclick="selectType('Customer')">Customer</button>
     </div>
 
-    <form>
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Password" required>
+    <form id="loginForm" autocomplete="off">
+      <input type="email" id="email" placeholder="Email" required autocomplete="off">
+      <input type="password" id="password" placeholder="Password" required autocomplete="new-password">
       <button type="submit" class="enter-btn">ENTER</button>
-    </form>
+    </form>    
+    
     <div class="switch-link" onclick="openSignup()">Sign Up</div>
   </div>
 </div>
@@ -80,6 +84,7 @@
     <div class="switch-link" onclick="backToLogin()">Back to Login</div>
   </div>
 </div>
+
 
 <div id="allProductsPopup" class="container-fluid bg-light py-4 shadow" style="display: none; position: absolute; top: 120px; left: 0; width: 100%; z-index: 999;">
   <div class="text-left mb-4">
@@ -152,52 +157,50 @@
     <div>
       <h3 class="fw-bold mb-4">Accessories</h3>
       <div class="d-flex flex-column">
-        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Keycaps</button>
-        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Cables</button>
-        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Switches</button>
-        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Case</button>
-        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Hard Disk</button>
-        <button class="btn btn-secondary rounded-pill px-4 py-2 fw-bold" style="width: 270px;">Others</button>
+        <button class="btn btn-secondary rounded-pill mb-3 fw-bold text-center px-4 py-2" style="min-width: 180px;">Keycaps</button>
+        <button class="btn btn-secondary rounded-pill mb-3 fw-bold text-center px-4 py-2" style="min-width: 180px;">Cables</button>
+        <button class="btn btn-secondary rounded-pill mb-3 fw-bold text-center px-4 py-2" style="min-width: 180px;">Switches</button>
+        <button class="btn btn-secondary rounded-pill mb-3 fw-bold text-center px-4 py-2" style="min-width: 180px;">Case</button>
+        <button class="btn btn-secondary rounded-pill mb-3 fw-bold text-center px-4 py-2" style="min-width: 180px;">Hard Disk</button>
+        <button class="btn btn-secondary rounded-pill fw-bold text-center px-4 py-2" style="min-width: 180px;">Others</button>
       </div>
     </div>
 
     <!-- Right Section: Images -->
-<div class="d-flex flex-column gap-4 ms-4">
+    <div class="d-flex flex-column gap-4 ms-4">
+      <!-- First Row -->
+      <div class="d-flex gap-4">
+        <a href="/product/keycaps1.html">
+          <img src="images/keycaps.png" alt="accessories 1" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        </a>
+        <a href="/product/keycaps2.html">
+          <img src="images/keycaps2.png" alt="accessories 2" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        </a>
+        <a href="/product/keycaps3.html">
+          <img src="images/keycaps3.png" alt="accessories 3" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        </a>
+        <a href="/product/keycaps4.html">
+          <img src="images/keycaps4.png" alt="accessories 4" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        </a>
+      </div>
 
-  <!-- First Row -->
-  <div class="d-flex gap-4">
-    <a href="/product/keycaps1.html">
-      <img src="images/keycaps.png" alt="accessories 1" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-    </a>
-    <a href="/product/keycaps2.html">
-      <img src="images/keycaps2.png" alt="accessories 2" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-    </a>
-    <a href="/product/keycaps3.html">
-      <img src="images/keycaps3.png" alt="accessories 3" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-    </a>
-    <a href="/product/keycaps4.html">
-      <img src="images/keycaps4.png" alt="accessories 4" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-    </a>
-  </div>
-
-  <!-- Second Row -->
-  <div class="d-flex gap-4">
-    <a href="/product/cable1.html">
-      <img src="images/keycaps.png" alt="accessories 5" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-    </a>
-    <a href="/product/cable2.html">
-      <img src="images/keycaps2.png" alt="accessories 6" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-    </a>
-    <a href="/product/switch1.html">
-      <img src="images/keycaps3.png" alt="accessories 7" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-    </a>
-    <a href="/product/case1.html">
-      <img src="images/keycaps4.png" alt="accessories 8" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-    </a>
-  </div>
-
-  </div>
-
+      <!-- Second Row -->
+      <div class="d-flex gap-4">
+        <a href="/product/cable1.html">
+          <img src="images/keycaps.png" alt="accessories 5" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        </a>
+        <a href="/product/cable2.html">
+          <img src="images/keycaps2.png" alt="accessories 6" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        </a>
+        <a href="/product/switch1.html">
+          <img src="images/keycaps3.png" alt="accessories 7" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        </a>
+        <a href="/product/case1.html">
+          <img src="images/keycaps4.png" alt="accessories 8" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        </a>
+      </div>
+    </div>
+    
   </div>
 </div>
 
@@ -281,185 +284,63 @@
 
   </div>
 </div>
-
-<!-- Offer Banner -->
-<div class="w-100 px-3 px-md-5 mt-3">
-  <div class="offer-banner bg-lightblue text-dark p-4 mx-auto">
-    <div class="text-start">
-      <h5 class="fw-bold">Right On Time To Enjoy Our Special OFFERS!!</h5>
-      <h5 class="fw-bold">🛒 ENJOY UP TO 30% OFF</h5>
-    </div>
-  </div>
-</div>
-
-
-<!-- Main Section -->
-<div class="container-fluid px-5 py-4">
-  <div class="row">
-    
-    <!-- Sidebar -->
-    <div class="col-md-2">
-      <h4 class="fw-bold">Category</h4>
-      <ul class="list-unstyled mt-3">
-        <li class="mb-3">
-          <a href="#" class="category-link text-dark active">Keycaps</a>
-        </li>
-        <li class="mb-3">
-          <a href="#" class="category-link text-dark">Mice</a>
-        </li>
-        <li class="mb-3">
-          <a href="#" class="category-link text-dark">Headset</a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Product Grid -->
-    <div class="col-md-10">
-      <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
-
-        <!-- Sample Product Card (Repeat as needed) -->
-        <div class="col">
-          <div class="card position-relative border-0">
-            <span class="badge bg-danger position-absolute top-0 end-0 m-2">-5% SALE</span>
-            <img src="images/keycaps.png" class="card-img-top" alt="Keycap 1">
-            <div class="card-body px-0">
-              <p class="card-title fw-bold small mb-1">Keychron Daruma Doll Metal Artisan Keycap</p>
-              <p class="mb-0 text-muted small">SKU: AT-34</p>
-              <p class="fw-bold mt-1 mb-0">$10.99 <s class="text-muted">$13.00</s></p>
-            </div>
-            <div class="col">
-              <div class="card position-relative border-0 h-100">
-                <span class="badge bg-danger position-absolute top-0 end-0 m-2">-5% SALE</span>
-                <img src="images/keycaps.png" class="card-img-top" alt="Keychron Keycap">
-                <div class="card-body px-0">
-                  <p class="fw-bold small mb-1">Keychron Daruma Doll Metal Artisan Keycap</p>
-                  <p class="text-muted small mb-1">SKU: AT-34</p>
-                  <p class="fw-bold mb-0">$10.99 <s class="text-muted">$13.00</s></p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card position-relative border-0 h-100">
-                <span class="badge bg-danger position-absolute top-0 end-0 m-2">-5% SALE</span>
-                <img src="images/keycaps.png" class="card-img-top" alt="Keychron Keycap">
-                <div class="card-body px-0">
-                  <p class="fw-bold small mb-1">Keychron Daruma Doll Metal Artisan Keycap</p>
-                  <p class="text-muted small mb-1">SKU: AT-34</p>
-                  <p class="fw-bold mb-0">$10.99 <s class="text-muted">$13.00</s></p>
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- ✅ Cart Section -->
+<main class="cart-container mt-5">
+    <!-- Left -->
+    <div class="cart-left">
+      <h2>Your Cart</h2>
+  
+      <!-- Item 1 -->
+      <div class="cart-item">
+        <img src="images/keyboard.png" alt="Keyboard">
+        <div class="item-details">
+          <h4>Keychron V5 Max QMK/VIA Wireless Custom Mechanical Keyboard</h4>
+          <p class="sku">SKU: V5M-D1</p>
+          <p class="price"><strong>$119.99</strong></p>
         </div>
-        <div class="col">
-          <div class="card position-relative border-0">
-            <span class="badge bg-danger position-absolute top-0 end-0 m-2">-5% SALE</span>
-            <img src="images/keycaps.png" class="card-img-top" alt="Keycap 7">
-            <div class="card-body px-0">
-              <p class="card-title fw-bold small mb-1">Keychron Daruma Doll Metal Artisan Keycap</p>
-              <p class="mb-0 text-muted small">SKU: AT-34</p>
-              <p class="fw-bold mt-1 mb-0">$10.99 <s class="text-muted">$13.00</s></p>
-            </div>
-            <div class="col">
-              <div class="card position-relative border-0 h-100">
-                <span class="badge bg-danger position-absolute top-0 end-0 m-2">-5% SALE</span>
-                <img src="images/keycaps.png" class="card-img-top" alt="Keychron Keycap">
-                <div class="card-body px-0">
-                  <p class="fw-bold small mb-1">Keychron Daruma Doll Metal Artisan Keycap</p>
-                  <p class="text-muted small mb-1">SKU: AT-34</p>
-                  <p class="fw-bold mb-0">$10.99 <s class="text-muted">$13.00</s></p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card position-relative border-0 h-100">
-                <span class="badge bg-danger position-absolute top-0 end-0 m-2">-5% SALE</span>
-                <img src="images/keycaps.png" class="card-img-top" alt="Keychron Keycap">
-                <div class="card-body px-0">
-                  <p class="fw-bold small mb-1">Keychron Daruma Doll Metal Artisan Keycap</p>
-                  <p class="text-muted small mb-1">SKU: AT-34</p>
-                  <p class="fw-bold mb-0">$10.99 <s class="text-muted">$13.00</s></p>
-                </div>
-              </div>
-            </div>
+        <div class="item-actions">
+          <div class="quantity">
+            <button>-</button>
+            <input type="text" value="2">
+            <button>+</button>
           </div>
+          <button class="remove"><i class="bi bi-trash"></i></button>
         </div>
-        <div class="col">
-          <div class="card position-relative border-0">
-            <span class="badge bg-danger position-absolute top-0 end-0 m-2">-5% SALE</span>
-            <img src="images/keycaps.png" class="card-img-top" alt="Keycap 7">
-            <div class="card-body px-0">
-              <p class="card-title fw-bold small mb-1">Keychron Daruma Doll Metal Artisan Keycap</p>
-              <p class="mb-0 text-muted small">SKU: AT-34</p>
-              <p class="fw-bold mt-1 mb-0">$10.99 <s class="text-muted">$13.00</s></p>
-            </div>
-            <div class="col">
-              <div class="card position-relative border-0 h-100">
-                <span class="badge bg-danger position-absolute top-0 end-0 m-2">-5% SALE</span>
-                <img src="images/keycaps.png" class="card-img-top" alt="Keychron Keycap">
-                <div class="card-body px-0">
-                  <p class="fw-bold small mb-1">Keychron Daruma Doll Metal Artisan Keycap</p>
-                  <p class="text-muted small mb-1">SKU: AT-34</p>
-                  <p class="fw-bold mb-0">$10.99 <s class="text-muted">$13.00</s></p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card position-relative border-0 h-100">
-                <span class="badge bg-danger position-absolute top-0 end-0 m-2">-5% SALE</span>
-                <img src="images/keycaps.png" class="card-img-top" alt="Keychron Keycap">
-                <div class="card-body px-0">
-                  <p class="fw-bold small mb-1">Keychron Daruma Doll Metal Artisan Keycap</p>
-                  <p class="text-muted small mb-1">SKU: AT-34</p>
-                  <p class="fw-bold mb-0">$10.99 <s class="text-muted">$13.00</s></p>
-                </div>
-              </div>
-            </div>
+      </div>
+  
+      <!-- Item 2 -->
+      <div class="cart-item">
+        <img src="images/keycaps.png" alt="Keycap">
+        <div class="item-details">
+          <h4>Keychron Daruma Doll Metal Artisan Keycap</h4>
+          <p class="sku">SKU: AT-34</p>
+          <p class="price"><strong>$13.99</strong></p>
+        </div>
+        <div class="item-actions">
+          <div class="quantity">
+            <button>-</button>
+            <input type="text" value="1">
+            <button>+</button>
           </div>
+          <button class="remove"><i class="bi bi-trash"></i></button>
         </div>
-        <div class="col">
-          <div class="card position-relative border-0">
-            <span class="badge bg-danger position-absolute top-0 end-0 m-2">-5% SALE</span>
-            <img src="images/keycaps.png" class="card-img-top" alt="Keycap 7">
-            <div class="card-body px-0">
-              <p class="card-title fw-bold small mb-1">Keychron Daruma Doll Metal Artisan Keycap</p>
-              <p class="mb-0 text-muted small">SKU: AT-34</p>
-              <p class="fw-bold mt-1 mb-0">$10.99 <s class="text-muted">$13.00</s></p>
-            </div>
-            <div class="col">
-              <div class="card position-relative border-0 h-100">
-                <span class="badge bg-danger position-absolute top-0 end-0 m-2">-5% SALE</span>
-                <img src="images/keycaps.png" class="card-img-top" alt="Keychron Keycap">
-                <div class="card-body px-0">
-                  <p class="fw-bold small mb-1">Keychron Daruma Doll Metal Artisan Keycap</p>
-                  <p class="text-muted small mb-1">SKU: AT-34</p>
-                  <p class="fw-bold mb-0">$10.99 <s class="text-muted">$13.00</s></p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card position-relative border-0 h-100">
-                <span class="badge bg-danger position-absolute top-0 end-0 m-2">-5% SALE</span>
-                <img src="images/keycaps.png" class="card-img-top" alt="Keychron Keycap">
-                <div class="card-body px-0">
-                  <p class="fw-bold small mb-1">Keychron Daruma Doll Metal Artisan Keycap</p>
-                  <p class="text-muted small mb-1">SKU: AT-34</p>
-                  <p class="fw-bold mb-0">$10.99 <s class="text-muted">$13.00</s></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Copy more .col blocks for more products -->
-
       </div>
     </div>
-  </div>
-</div>
+  
+    <!-- Right -->
+    <div class="cart-right">
+        <h3>Order Summary</h3>
+        <p class="note">Taxes, discounts and shipping calculated at checkout.</p>
+        <div class="subtotal">
+          <span>Subtotal:</span>
+          <strong>$253.97</strong>
+        </div>
+        <a href="https://web.whatsapp.com/" target="_blank" class="whatsapp-btn">Whatsapp</a>
+        <p class="whatsapp-note">Untuk melanjutkan pemesanan silahkan hubungi kami via Whatsapp</p>
+      </div>
+      
+  </main>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 <footer class="site-footer">
   <div class="brand-section">
     <button class="brand-button">Shop By Brand</button>
@@ -510,8 +391,9 @@
   </div>
 </footer>
 
+
 <script>
-  
+
   function populateProducts() {
     const hotDealsContainer = document.getElementById('hotDeals');
     const featuredContainer = document.getElementById('featuredProducts');
@@ -519,6 +401,7 @@
     hotDealsContainer.innerHTML = hotDealsData.map(p => createCard(p)).join('').repeat(6);
     featuredContainer.innerHTML = featuredData.map(p => createCard(p)).join('').repeat(6);
   }
+
   function handleSearch() {
     const input = document.getElementById('searchBar').value.toLowerCase();
     alert('Search for: ' + input);
@@ -568,6 +451,7 @@ function backToLogin() {
 }
 
 
+
 navPopups.forEach(({ navId, popupId }) => {
   const navItem = document.getElementById(navId);
   const popup = document.getElementById(popupId);
@@ -595,13 +479,33 @@ function hideAllPopups() {
   document.querySelectorAll('[id$="Popup"]').forEach(p => p.style.display = 'none');
 }
 
-document.querySelectorAll('.category-link').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelectorAll('.category-link').forEach(l => l.classList.remove('active', 'text-warning', 'fw-semibold'));
-    this.classList.add('active', 'text-warning', 'fw-semibold');
-  });
+// Fake login handling
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // stop actual form submit
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const isAdmin = document.getElementById("adminBtn").classList.contains("active");
+
+  if (isAdmin) {
+    // fake check admin
+    if (email === "admin@jmt.com" && password === "admin") {
+      window.location.href = "./dashboard.html";
+    } else {
+      alert("Invalid Admin credentials!");
+    }
+  } else {
+    // fake check customer
+    if (email === "customer@jmt.com" && password === "cust") {
+      window.location.href = "./custdashboard.html"; // redirect to customer dashboard
+    } else {
+      alert("Invalid Customer credentials!");
+    }
+  }
 });
+
+
+
 </script>
 </body>
 </html>

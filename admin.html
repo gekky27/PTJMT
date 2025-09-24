@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="images/JMT.jpg" alt="Logo">
+        <h2>Jaya Multi Teknologi</h2>
+      </div>
+
+      <div class="admin-info">
+        <div class="avatar">A</div>
+        <p>Hello,<br><strong>Admin</strong></p>
+      </div>
+
+      <nav class="menu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="order.html">Orders</a>
+        <a href="admin.html" class="active">Products</a>
+        <!-- 🔹 Logout popup trigger -->
+        <a href="#" onclick="openLogout()">Log out</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="products-header">
+        <h2>Products</h2>
+        <div class="actions">
+          <a href="add-product.html" class="btn add"><span>➕</span> ADD</a>
+        </div>
+      </div>
+
+      <table class="products-table">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="images/keycaps.png" alt="Product"></td>
+            <td>Keychron Daruma Doll Metal Artisan Keycap</td>
+            <td><strong>Rp.350.000</strong></td>
+            <td><label class="switch"><input type="checkbox"><span class="slider"></span></label></td>
+            <td class="icons">
+              <span onclick="openEdit()">✏️</span>
+              <span onclick="openDelete()">🗑️</span>
+            </td>
+          </tr>
+          <tr class="highlight">
+            <td><img src="images/keycaps.png" alt="Product"></td>
+            <td>Keychron Daruma Doll Metal Artisan Keycap</td>
+            <td><strong>Rp.350.000</strong></td>
+            <td><label class="switch"><input type="checkbox" checked><span class="slider"></span></label></td>
+            <td class="icons">
+              <span onclick="openEdit()">✏️</span>
+              <span onclick="openDelete()">🗑️</span>
+            </td>
+          </tr>
+          <tr>
+            <td><img src="images/keycaps.png" alt="Product"></td>
+            <td>Keychron Daruma Doll Metal Artisan Keycap</td>
+            <td><strong>Rp.350.000</strong></td>
+            <td><label class="switch"><input type="checkbox"><span class="slider"></span></label></td>
+            <td class="icons">
+              <span onclick="openEdit()">✏️</span>
+              <span onclick="openDelete()">🗑️</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+  <!-- 🔹 Logout Popup -->
+  <div class="overlay" id="logoutOverlay">
+    <div class="popup">
+      <button class="close-btn" onclick="closeLogout()">Close</button>
+      <p>Are you sure you want<br>to Log out?</p>
+      <div class="popup-actions">
+        <button class="btn yes" onclick="window.location.href='./index.html'">Yes</button>
+        <button class="btn no" onclick="closeLogout()">No</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 Delete Popup -->
+  <div class="overlay" id="deleteOverlay">
+    <div class="popup">
+      <button class="close-btn" onclick="closeDelete()">Close</button>
+      <p>Are you sure you want<br>to Delete this product?</p>
+      <div class="popup-actions">
+        <button class="btn yes">Yes</button>
+        <button class="btn no" onclick="closeDelete()">No</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 Edit Popup -->
+  <div class="overlay" id="editOverlay">
+    <div class="popup">
+      <button class="close-btn" onclick="closeEdit()">Close</button>
+      <p>Do you want to<br>Edit this product?</p>
+      <div class="popup-actions">
+        <button class="btn yes" onclick="window.location.href='add-product.html'">Yes</button>
+        <button class="btn no" onclick="closeEdit()">No</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 Small JS -->
+  <script>
+    // Logout
+    function openLogout() { document.getElementById("logoutOverlay").style.display = "flex"; }
+    function closeLogout() { document.getElementById("logoutOverlay").style.display = "none"; }
+
+    // Delete
+    function openDelete() { document.getElementById("deleteOverlay").style.display = "flex"; }
+    function closeDelete() { document.getElementById("deleteOverlay").style.display = "none"; }
+
+    // Edit
+    function openEdit() { document.getElementById("editOverlay").style.display = "flex"; }
+    function closeEdit() { document.getElementById("editOverlay").style.display = "none"; }
+  </script>
+</body>
+</html>

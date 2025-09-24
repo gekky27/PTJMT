@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Information</title>
+  <link rel="stylesheet" href="cust.css">
+</head>
+<body>
+  <div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="images/JMT.jpg" alt="Logo">
+        <h2>Jaya Multi Teknologi</h2>
+      </div>
+
+      <div class="profile">
+        <div class="avatar">RP</div>
+        <p>Hello,<br><strong>Ratih Putra</strong></p>
+      </div>
+
+      <nav class="menu">
+        <a href="accinfo.html" class="active">Account Information</a>
+        <a href="custdashboard.html">Transaction</a>
+        <a href="return.html">Returns</a>
+        <a href="#" onclick="openLogout()">Log out</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="info-grid">
+        <div class="info-item">
+          <label>Name</label>
+          <div class="info-box">Ratih Putra</div>
+        </div>
+        <div class="info-item">
+          <label>Phone Number</label>
+          <div class="info-box">0819999999999999</div>
+        </div>
+        <div class="info-item">
+          <label>Email</label>
+          <div class="info-box">gekmasratih@gmail.com</div>
+        </div>
+        <div class="info-item address">
+          <label>Address</label>
+          <div class="info-box">jalan pulau beioioioi no.3</div>
+        </div>
+      </div>
+    </main>
+  </div>
+    <!-- 🔹 Logout Popup Overlay -->
+    <div class="overlay" id="logoutOverlay">
+        <div class="popup">
+          <button class="close-btn" onclick="closeLogout()">Close</button>
+          <p>Are you sure you want<br>to Log out?</p>
+          <div class="popup-actions">
+            <button class="btn yes" onclick="window.location.href='login.html'">Yes</button>
+            <button class="btn no" onclick="closeLogout()">No</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- 🔹 Small JS -->
+      <script>
+        function openLogout() {
+          document.getElementById("logoutOverlay").style.display = "flex";
+        }
+        function closeLogout() {
+          document.getElementById("logoutOverlay").style.display = "none";
+        }
+      </script>
+</body>
+</html>

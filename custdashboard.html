@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard</title>
+  <link rel="stylesheet" href="cust.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="images/JMT.jpg" alt="Logo">
+        <h2>Jaya Multi Teknologi</h2>
+      </div>
+
+      <div class="profile">
+        <div class="avatar">RP</div>
+        <p>Hello,<br><strong>Ratih Putra</strong></p>
+      </div>
+
+      <nav class="menu">
+        <a href="accinfo.html">Account Information</a>
+        <a href="custdashboard.html" class="active">Transaction</a>
+        <a href="return.html">Returns</a>
+        <a href="#" onclick="openLogout()">Log out</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h2>Transaction history</h2>
+
+      <!-- Transaction Filter Buttons -->
+      <div class="transaction-filters">
+        <button class="btn all active" onclick="window.location.href='custdashboard.html'">All Transaction</button>
+        <button class="btn waiting" onclick="window.location.href='custdashboard.html'">Waiting payment</button>
+        <button class="btn paid" onclick="window.location.href='custdashboard.html'">Paid</button>
+        <button class="btn cancelled" onclick="window.location.href='custdashboard.html'">Cancelled</button>
+      </div>
+      
+
+      <!-- Transaction Card -->
+      <div class="transaction-card">
+        <div class="transaction-info">
+          <p>Transaction <strong>JTM0000001</strong></p>
+          <p>Waiting payment:</p>
+        </div>
+        <div class="transaction-meta">
+          <p>Total: <strong>$253.97</strong></p>
+          <p>Time: 23 : 54 : 09</p>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- 🔹 Logout Popup Overlay -->
+  <div class="overlay" id="logoutOverlay">
+    <div class="popup">
+      <button class="close-btn" onclick="closeLogout()">Close</button>
+      <p>Are you sure you want<br>to Log out?</p>
+      <div class="popup-actions">
+        <button class="btn yes" onclick="window.location.href='./index.html'">Yes</button>
+        <button class="btn no" onclick="closeLogout()">No</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 Small JS -->
+  <script>
+    function openLogout() {
+      document.getElementById("logoutOverlay").style.display = "flex";
+    }
+    function closeLogout() {
+      document.getElementById("logoutOverlay").style.display = "none";
+    }
+  </script>
+</body>
+</html>

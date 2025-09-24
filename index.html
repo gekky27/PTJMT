@@ -13,37 +13,76 @@
 <body>
 
 <!-- Navbar with stacked layout -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-3 flex-column align-items-start">
   <div class="d-flex w-100 align-items-center justify-content-between" style="height: 70px;">
-    <a class="navbar-brand clickable" href="#" onclick="alert('Redirect to homepage')">
+    <a class="navbar-brand clickable" href="index.html">
       <img src="JMTLOGO.png" style="width: 200px; height: 200px;" alt="Logo">
-
     </a>
-    <form class="d-flex w-50 mx-auto" style="max-height: 50px;">
-      <input class="form-control me-2" type="search" placeholder="Search in JMT" aria-label="Search">
+    <form class="d-flex me-4" style="max-height: 50px; max-width: 750px; width: 100%;">
+      <input id="searchBar" class="form-control" type="search" placeholder="Search in JMT" aria-label="Search"
+            onclick="document.querySelector('.search-overlay')?.style.display='flex'">
     </form>
+    
     <div class="d-flex align-items-center">
-      <a href="#" onclick="alert('Go to Cart')" class="me-3 clickable">
+      <a href="cart.html" onclick="alert('Go to Cart')" class="me-3 clickable">
         <img src="images/shopping.png" alt="Cart" style="width: 32px; height: 32px;">
       </a>
-      <a href="#" onclick="alert('Go to Profile')" class="clickable">
+      <!-- Profile triggers popup -->
+      <a href="#" onclick="openLogin()" class="clickable">
         <img src="images/person.png" alt="Profile" style="width: 32px; height: 32px;">
       </a>
     </div>
-    
   </div>
-  <div class="collapse navbar-collapse w-100"style=" height: 50px;">
+  <div class="collapse navbar-collapse w-100" style="height: 50px;">
     <ul class="navbar-nav nav-center w-100 text-center flex-wrap mt-2">
-      <li class="nav-item" id="allProductsNav"><a class="nav-link" href="#">All Products</a></li>
-      <li class="nav-item" id="maintenanceNav"><a class="nav-link" href="#">Maintenance</a></li>
-      <li class="nav-item" id="accessoriesNav"><a class="nav-link" href="#">Accessories</a></li>
-      <li class="nav-item" id="networkingNav"><a class="nav-link" href="#">Networking</a></li>
-      <li class="nav-item" id="softwareNav"><a class="nav-link" href="#">Software</a></li>
-      <li class="nav-item" id="softwareNav"><a class="nav-link" href="deals.html">Deals</a></li>
-
+      <li class="nav-item" id="allProductsNav"><a class="nav-link" href="allproduct.html">All Products</a></li>
+      <li class="nav-item" id="maintenanceNav"><a class="nav-link" href="maintenance.html">Maintenance</a></li>
+      <li class="nav-item" id="accessoriesNav"><a class="nav-link" href="accessories.html">Accessories</a></li>
+      <li class="nav-item" id="networkingNav"><a class="nav-link" href="networking.html">Networking</a></li>
+      <li class="nav-item" id="softwareNav"><a class="nav-link" href="software.html">Software</a></li>
+      <li class="nav-item"><a class="nav-link" href="deals.html">Deals</a></li>
     </ul>
   </div>
 </nav>
+
+<!-- Overlay with Login Popup -->
+<div class="overlay" id="loginOverlay">
+  <div class="login-popup">
+    <button class="close-btn" onclick="closeLogin()">Close</button>
+
+    <div class="user-type">
+      <button id="adminBtn" class="active" onclick="selectType('Admin')">Admin</button>
+      <button id="customerBtn" onclick="selectType('Customer')">Customer</button>
+    </div>
+
+    <form id="loginForm" autocomplete="off">
+      <input type="email" id="email" placeholder="Email" required autocomplete="off">
+      <input type="password" id="password" placeholder="Password" required autocomplete="new-password">
+      <button type="submit" class="enter-btn">ENTER</button>
+    </form>    
+    
+    <div class="switch-link" onclick="openSignup()">Sign Up</div>
+  </div>
+</div>
+
+<!-- SIGNUP POPUP -->
+<div class="overlay" id="signupOverlay">
+  <div class="login-popup">
+    <button class="close-btn" onclick="closeSignup()">Close</button>
+
+    <h5 class="mb-3">Create an Account</h5>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit" class="enter-btn">SIGN UP</button>
+    </form>
+
+    <div class="switch-link" onclick="backToLogin()">Back to Login</div>
+  </div>
+</div>
+
 
 <div id="allProductsPopup" class="container-fluid bg-light py-4 shadow" style="display: none; position: absolute; top: 120px; left: 0; width: 100%; z-index: 999;">
   <div class="text-left mb-4">
@@ -116,52 +155,50 @@
     <div>
       <h3 class="fw-bold mb-4">Accessories</h3>
       <div class="d-flex flex-column">
-        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Keycaps</button>
-        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Cables</button>
-        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Switches</button>
-        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Case</button>
-        <button class="btn btn-secondary rounded-pill px-4 py-2 mb-3 fw-bold" style="width: 270px;">Hard Disk</button>
-        <button class="btn btn-secondary rounded-pill px-4 py-2 fw-bold" style="width: 270px;">Others</button>
+        <button class="btn btn-secondary rounded-pill mb-3 fw-bold text-center px-4 py-2" style="min-width: 180px;">Keycaps</button>
+        <button class="btn btn-secondary rounded-pill mb-3 fw-bold text-center px-4 py-2" style="min-width: 180px;">Cables</button>
+        <button class="btn btn-secondary rounded-pill mb-3 fw-bold text-center px-4 py-2" style="min-width: 180px;">Switches</button>
+        <button class="btn btn-secondary rounded-pill mb-3 fw-bold text-center px-4 py-2" style="min-width: 180px;">Case</button>
+        <button class="btn btn-secondary rounded-pill mb-3 fw-bold text-center px-4 py-2" style="min-width: 180px;">Hard Disk</button>
+        <button class="btn btn-secondary rounded-pill fw-bold text-center px-4 py-2" style="min-width: 180px;">Others</button>
       </div>
     </div>
 
     <!-- Right Section: Images -->
-<div class="d-flex flex-column gap-4 ms-4">
+    <div class="d-flex flex-column gap-4 ms-4">
+      <!-- First Row -->
+      <div class="d-flex gap-4">
+        <a href="/product/keycaps1.html">
+          <img src="images/keycaps.png" alt="accessories 1" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        </a>
+        <a href="/product/keycaps2.html">
+          <img src="images/keycaps2.png" alt="accessories 2" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        </a>
+        <a href="/product/keycaps3.html">
+          <img src="images/keycaps3.png" alt="accessories 3" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        </a>
+        <a href="/product/keycaps4.html">
+          <img src="images/keycaps4.png" alt="accessories 4" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        </a>
+      </div>
 
-  <!-- First Row -->
-  <div class="d-flex gap-4">
-    <a href="/product/keycaps1.html">
-      <img src="images/keycaps.png" alt="accessories 1" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-    </a>
-    <a href="/product/keycaps2.html">
-      <img src="images/keycaps2.png" alt="accessories 2" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-    </a>
-    <a href="/product/keycaps3.html">
-      <img src="images/keycaps3.png" alt="accessories 3" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-    </a>
-    <a href="/product/keycaps4.html">
-      <img src="images/keycaps4.png" alt="accessories 4" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-    </a>
-  </div>
-
-  <!-- Second Row -->
-  <div class="d-flex gap-4">
-    <a href="/product/cable1.html">
-      <img src="images/keycaps.png" alt="accessories 5" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-    </a>
-    <a href="/product/cable2.html">
-      <img src="images/keycaps2.png" alt="accessories 6" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-    </a>
-    <a href="/product/switch1.html">
-      <img src="images/keycaps3.png" alt="accessories 7" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-    </a>
-    <a href="/product/case1.html">
-      <img src="images/keycaps4.png" alt="accessories 8" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-    </a>
-  </div>
-
-  </div>
-
+      <!-- Second Row -->
+      <div class="d-flex gap-4">
+        <a href="/product/cable1.html">
+          <img src="images/keycaps.png" alt="accessories 5" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        </a>
+        <a href="/product/cable2.html">
+          <img src="images/keycaps2.png" alt="accessories 6" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        </a>
+        <a href="/product/switch1.html">
+          <img src="images/keycaps3.png" alt="accessories 7" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        </a>
+        <a href="/product/case1.html">
+          <img src="images/keycaps4.png" alt="accessories 8" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        </a>
+      </div>
+    </div>
+    
   </div>
 </div>
 
@@ -191,29 +228,29 @@
       <img src="images/modem.png" alt="accessories 1" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
     </a>
     <a href="/product/keycaps2.html">
-      <img src="images/keycaps2.png" alt="accessories 2" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="images/modem.png" alt="accessories 2" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
     </a>
     <a href="/product/keycaps3.html">
-      <img src="images/keycaps3.png" alt="accessories 3" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="images/modem.png" alt="accessories 3" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
     </a>
     <a href="/product/keycaps4.html">
-      <img src="images/keycaps4.png" alt="accessories 4" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="images/modem.png" alt="accessories 4" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
     </a>
   </div>
 
   <!-- Second Row -->
   <div class="d-flex gap-4">
     <a href="/product/cable1.html">
-      <img src="images/keycaps.png" alt="accessories 5" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="images/modem.png" alt="accessories 5" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
     </a>
     <a href="/product/cable2.html">
-      <img src="images/keycaps2.png" alt="accessories 6" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="images/modem.png" alt="accessories 6" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
     </a>
     <a href="/product/switch1.html">
-      <img src="images/keycaps3.png" alt="accessories 7" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="images/modem.png" alt="accessories 7" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
     </a>
     <a href="/product/case1.html">
-      <img src="images/keycaps4.png" alt="accessories 8" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="images/modem.png" alt="accessories 8" style="width: 200px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
     </a>
   </div>
 
@@ -353,14 +390,16 @@
   function createCard(data) {
     return `
       <div class="col">
-        <div class="card product-card clickable" onclick="alert('Clicked: ${data.title}')">
-          <img src="${data.img}" class="card-img-top" alt="${data.title}" />
-          <div class="card-body p-2">
-            <h6 class="product-title">${data.title}</h6>
-            <p class="text-muted mb-1">SKU: ${data.sku}</p>
-            <p class="mb-0"><strong>${data.price}</strong></p>
+        <a href="detail.html" class="text-decoration-none text-dark">
+          <div class="card product-card clickable">
+            <img src="${data.img}" class="card-img-top" alt="${data.title}" />
+            <div class="card-body p-2">
+              <h6 class="product-title">${data.title}</h6>
+              <p class="text-muted mb-1">SKU: ${data.sku}</p>
+              <p class="mb-0"><strong>${data.price}</strong></p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     `;
   }
@@ -389,6 +428,41 @@
   { navId: 'softwareNav', popupId: 'softwarePopup' }
 ];
 
+function openLogin() {
+  document.getElementById("loginOverlay").style.display = "flex";
+}
+
+function closeLogin() {
+  document.getElementById("loginOverlay").style.display = "none";
+}
+
+function selectType(type) {
+  document.getElementById("adminBtn").classList.remove("active");
+  document.getElementById("customerBtn").classList.remove("active");
+
+  if(type === "Admin") {
+    document.getElementById("adminBtn").classList.add("active");
+  } else {
+    document.getElementById("customerBtn").classList.add("active");
+  }
+}
+// Switch to signup
+function openSignup() {
+  closeLogin();
+  document.getElementById("signupOverlay").style.display = "flex";
+}
+// Close signup
+function closeSignup() {
+  document.getElementById("signupOverlay").style.display = "none";
+}
+// Back to login
+function backToLogin() {
+  closeSignup();
+  openLogin();
+}
+
+
+
 navPopups.forEach(({ navId, popupId }) => {
   const navItem = document.getElementById(navId);
   const popup = document.getElementById(popupId);
@@ -415,6 +489,34 @@ navPopups.forEach(({ navId, popupId }) => {
 function hideAllPopups() {
   document.querySelectorAll('[id$="Popup"]').forEach(p => p.style.display = 'none');
 }
+
+// Fake login handling
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // stop actual form submit
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const isAdmin = document.getElementById("adminBtn").classList.contains("active");
+
+  if (isAdmin) {
+    // fake check admin
+    if (email === "admin@jmt.com" && password === "admin") {
+      window.location.href = "./dashboard.html";
+    } else {
+      alert("Invalid Admin credentials!");
+    }
+  } else {
+    // fake check customer
+    if (email === "customer@jmt.com" && password === "cust") {
+      window.location.href = "./custdashboard.html"; // redirect to customer dashboard
+    } else {
+      alert("Invalid Customer credentials!");
+    }
+  }
+});
+
+
+
 </script>
 </body>
 </html>
